@@ -6,9 +6,9 @@ module.exports = {
   mode: "production",
   entry: "./src/main.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: undefined, // 开发模式没有输出，不需要指定输出目录
     filename: "main.js",
-    clean: true,
+    // clean: true, 不需要自动清空
   },
   module: {
     rules: [
