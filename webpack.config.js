@@ -1,6 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -14,7 +16,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin, "style-loader", "css-loader"],
       },
       {
         test: /\.(png|jpe?g|gif|webp)$/,
@@ -50,6 +52,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public/index.html"),
     }),
+    new MiniCssExtractPlugin({
+      filename: "static/css/main.css",
+    }),
+    new CssMinimizerPlugin(),
   ],
   devServer: {
     host: "localhost", // 启动服务器域名
