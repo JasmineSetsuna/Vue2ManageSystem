@@ -1,5 +1,6 @@
-# vue-manage-system2
+# Vue2ManageSystem
 
+- using Vue2+Element UI+vue-router...
 ## Project setup
 ```
 npm install
