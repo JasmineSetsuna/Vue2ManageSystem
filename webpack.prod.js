@@ -1,6 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -14,7 +16,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin, "style-loader", "css-loader"],
       },
       {
         test: /\.(png|jpe?g|gif|webp)$/,
@@ -50,12 +52,21 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public/index.html"),
     }),
-    ],
-
-//   生产不用启用服务器
-//   devServer: { 
-//     host: "localhost", // 启动服务器域名
-//     port: "3000", // 启动服务器端口号
-//     open: true, // 是否自动打开浏览器
-//   },
+    new MiniCssExtractPlugin({
+      filename: "static/css/main.css",
+    }),
+    new CssMinimizerPlugin(),
+  ],
+  performance: {
+    // 入口起点的最大体积
+    maxEntrypointSize: 50000000,
+    // 生成文件的最大体积
+    maxAssetSize: 30000000,
+  },
+  //   生产不用启用服务器
+  //   devServer: {
+  //     host: "localhost", // 启动服务器域名
+  //     port: "3000", // 启动服务器端口号
+  //     open: true, // 是否自动打开浏览器
+  //   },
 };

@@ -54,6 +54,12 @@ module.exports = {
   devServer: {
     host: "localhost", // 启动服务器域名
     port: "3000", // 启动服务器端口号
-    open: false, // 是否自动打开浏览器
+    open: true, // 是否自动打开浏览器
+  },
+  performance: {
+    // 入口起点的最大体积
+    maxEntrypointSize: 50000000,
+    // 生成文件的最大体积
+    maxAssetSize: 30000000,
   },
 };

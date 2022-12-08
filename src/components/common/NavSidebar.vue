@@ -46,22 +46,22 @@ export default {
             collapse: false,
             items: [
                 {
-                    icon: 'el-icon-lx-home',
+                    icon: 'el-icon-s-home',
                     index: 'dashboard',
                     title: '系统首页'
                 },
                 {
-                    icon: 'el-icon-lx-cascades',
+                    icon: 'el-icon-menu',
                     index: 'table',
                     title: '基础表格'
                 },
                 {
-                    icon: 'el-icon-lx-copy',
+                    icon: 'el-icon-document-copy',
                     index: 'tabs',
                     title: 'tab选项卡'
                 },
                 {
-                    icon: 'el-icon-lx-calendar',
+                    icon: 'el-icon-s-order',
                     index: '3',
                     title: '表单相关',
                     subs: [
@@ -90,7 +90,7 @@ export default {
                     ]
                 },
                 {
-                    icon: 'el-icon-lx-emoji',
+                    icon: 'el-icon-eleme',
                     index: 'icon',
                     title: '自定义图标'
                 },
@@ -115,12 +115,12 @@ export default {
                     ]
                 },
                 {
-                    icon: 'el-icon-lx-global',
+                    icon: 'el-icon-picture-outline-round',
                     index: 'i18n',
                     title: '国际化功能'
                 },
                 {
-                    icon: 'el-icon-lx-warn',
+                    icon: 'el-icon-warning',
                     index: '7',
                     title: '错误处理',
                     subs: [
