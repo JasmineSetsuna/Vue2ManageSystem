@@ -16,7 +16,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin, "style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(png|jpe?g|gif|webp)$/,
@@ -53,7 +53,7 @@ module.exports = {
       template: path.resolve(__dirname, "public/index.html"),
     }),
     new MiniCssExtractPlugin({
-      filename: "static/css/main.css",
+      filename: "static/css/[name].css",
     }),
     new CssMinimizerPlugin(),
   ],
